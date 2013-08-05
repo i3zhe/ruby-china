@@ -6,7 +6,7 @@
       else
         ids = []
       end
-      @hot_nodes = Node.where(:_id.in => ids).limit(5)
+      @hot_nodes = Node.where(:_id.in => ids).desc(:topics_count).limit(5)
     %>
     <div class="box">
       <div class="btn-group">
